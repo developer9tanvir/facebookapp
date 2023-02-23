@@ -1,25 +1,20 @@
 import express from 'express';
 import colors from 'colors';
+import userRoute from './routes/user.js';
 import dotenv from 'dotenv';
 import mongoDBConnect from './config/db.js';
 import errorHandler from './middlewares/errorHandler.js';
 import cookieParser from 'cookie-parser';
-import userRoute from './routes/user.js';
-
-
-
-
-
-
- 
 
 
 const app = express();
+dotenv.config()
 
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended : false }));
 app.use(cookieParser());
+
 
 
 
